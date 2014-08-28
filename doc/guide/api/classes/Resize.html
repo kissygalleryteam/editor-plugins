@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>build/color/btn-debug.js - editor-plugins</title>
+    <title>Resize - editor-plugins</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -232,225 +232,335 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: build/color/btn-debug.js</h1>
+                        <h1>Resize Class</h1>
+<div class="box meta">
+    
 
-<div class="file">
-    <pre class="code prettyprint linenums">
-KISSY.add(&#x27;kg/editor-plugins/1.1.0/color/btn&#x27;,[&quot;editor&quot;,&quot;../button&quot;,&quot;../overlay&quot;,&quot;../dialog-loader&quot;,&quot;node&quot;,&quot;util&quot;],function(S ,require, exports, module) {
-/**
- * @ignore
- * color button.
- * @author yiminghe@gmail.com
- */
+    
 
-var Editor = require(&#x27;editor&#x27;);
-var Button = require(&#x27;../button&#x27;);
-var Overlay4E = require(&#x27;../overlay&#x27;);
-var DialogLoader = require(&#x27;../dialog-loader&#x27;);
+    
+        
+            Module: <a href="../modules/resize.html">resize</a>
+        
+    
 
-var $ = require(&#x27;node&#x27;);
-var util = require(&#x27;util&#x27;);
-
-var COLORS = [
-    [&#x27;000&#x27;, &#x27;444&#x27;, &#x27;666&#x27;, &#x27;999&#x27;, &#x27;CCC&#x27;, &#x27;EEE&#x27;, &#x27;F3F3F3&#x27;, &#x27;FFF&#x27;],
-    [&#x27;F00&#x27;, &#x27;F90&#x27;, &#x27;FF0&#x27;, &#x27;0F0&#x27;, &#x27;0FF&#x27;, &#x27;00F&#x27;, &#x27;90F&#x27;, &#x27;F0F&#x27;],
-    [&#x27;F4CC&#x27; + &#x27;CC&#x27;, &#x27;FCE5CD&#x27;, &#x27;FFF2CC&#x27;, &#x27;D9EAD3&#x27;, &#x27;D0E0E3&#x27;, &#x27;CFE2F3&#x27;, &#x27;D9D2E9&#x27;, &#x27;EAD1DC&#x27;,
-        &#x27;EA9999&#x27;, &#x27;F9CB9C&#x27;, &#x27;FFE599&#x27;, &#x27;B6D7A8&#x27;, &#x27;A2C4C9&#x27;, &#x27;9FC5E8&#x27;, &#x27;B4A7D6&#x27;, &#x27;D5A6BD&#x27;,
-        &#x27;E06666&#x27;, &#x27;F6B26B&#x27;, &#x27;FFD966&#x27;, &#x27;93C47D&#x27;, &#x27;76A5AF&#x27;, &#x27;6FA8DC&#x27;, &#x27;8E7CC3&#x27;, &#x27;C27BAD&#x27;,
-        &#x27;CC0000&#x27;, &#x27;E69138&#x27;, &#x27;F1C232&#x27;, &#x27;6AA84F&#x27;, &#x27;45818E&#x27;, &#x27;3D85C6&#x27;, &#x27;674EA7&#x27;, &#x27;A64D79&#x27;,
-        &#x27;990000&#x27;, &#x27;B45F06&#x27;, &#x27;BF9000&#x27;, &#x27;38761D&#x27;, &#x27;134F5C&#x27;, &#x27;0B5394&#x27;, &#x27;351C75&#x27;, &#x27;741B47&#x27;,
-        &#x27;660000&#x27;, &#x27;783F04&#x27;, &#x27;7F6000&#x27;, &#x27;274E13&#x27;, &#x27;0C343D&#x27;, &#x27;073763&#x27;, &#x27;20124D&#x27;, &#x27;4C1130&#x27;]
-], html;
+    
+</div>
 
 
-function initHTML() {
-    html = &#x27;&lt;div class=&quot;{prefixCls}editor-color-panel&quot;&gt;&#x27; +
-        &#x27;&lt;a class=&quot;{prefixCls}editor-color-remove&quot; &#x27; +
-        &#x27;href=&quot;javascript:void(\&#x27;清除\&#x27;);&quot;&gt;&#x27; +
-        &#x27;清除&#x27; +
-        &#x27;&lt;/a&gt;&#x27;;
-    for (var i = 0; i &lt; 3; i++) {
-        html += &#x27;&lt;div class=&quot;{prefixCls}editor-color-palette&quot;&gt;&lt;table&gt;&#x27;;
-        var c = COLORS[i], l = c.length / 8;
-        for (var k = 0; k &lt; l; k++) {
-            html += &#x27;&lt;tr&gt;&#x27;;
-            for (var j = 0; j &lt; 8; j++) {
-                var currentColor = &#x27;#&#x27; + (c[8 * k + j]);
-                html += &#x27;&lt;td&gt;&#x27;;
-                html += &#x27;&lt;a href=&quot;javascript:void(0);&quot; &#x27; +
-                    &#x27;class=&quot;{prefixCls}editor-color-a&quot; &#x27; +
-                    &#x27;style=&quot;background-color:&#x27; + currentColor + &#x27;&quot;&#x27; +
-                    &#x27;&gt;&lt;/a&gt;&#x27;;
-                html += &#x27;&lt;/td&gt;&#x27;;
-            }
-            html += &#x27;&lt;/tr&gt;&#x27;;
-        }
-        html += &#x27;&lt;/table&gt;&lt;/div&gt;&#x27;;
-    }
-    html += &#x27;&#x27; +
-        &#x27;&lt;div&gt;&#x27; +
-        &#x27;&lt;a class=&quot;{prefixCls}editor-button {prefixCls}editor-color-others ks-inline-block&quot;&gt;其他颜色&lt;/a&gt;&#x27; +
-        &#x27;&lt;/div&gt;&#x27; +
-        &#x27;&lt;/div&gt;&#x27;;
-}
 
-initHTML();
+<div class="box intro">
+    <p>编辑器的调整大小插件</p>
 
-var ColorButton = Button.extend({
-    initializer: function () {
-        var self = this;
-        self.on(&#x27;blur&#x27;, function () {
-            // make select color works
-            setTimeout(function () {
-                if (self.colorWin) {
-                    self.colorWin.hide();
-                }
-            }, 150);
-        });
-        self.on(&#x27;click&#x27;, function () {
-            var checked = self.get(&#x27;checked&#x27;);
-            if (checked) {
-                self._prepare();
-            } else {
-                if (self.colorWin) {
-                    self.colorWin.hide();
-                }
-            }
-        });
-    },
+</div>
 
-    _prepare: function () {
-        var self = this,
-            editor = self.get(&#x27;editor&#x27;),
-            prefixCls = editor.get(&#x27;prefixCls&#x27;),
-            colorPanel;
 
-        self.colorWin = new Overlay4E({
-            // TODO 变成了 -1??
-            elAttrs: {
-                tabindex: 0
-            },
-            elCls: prefixCls + &#x27;editor-popup&#x27;,
-            content: util.substitute(html, {
-                prefixCls: prefixCls
-            }),
-            width: 172,
-            zIndex: Editor.baseZIndex(Editor.ZIndexManager.POPUP_MENU)
-        }).render();
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_Resize" class="method item">
+    <h3 class="name"><code>Resize</code></h3>
 
-        var colorWin = self.colorWin;
-        colorPanel = colorWin.get(&#x27;contentEl&#x27;);
-        colorPanel.on(&#x27;click&#x27;, self._selectColor, self);
-        colorWin.on(&#x27;hide&#x27;, function () {
-            self.set(&#x27;checked&#x27;, false);
-        });
-        var others = colorPanel.one(&#x27;.&#x27; + prefixCls + &#x27;editor-color-others&#x27;);
-        others.on(&#x27;click&#x27;, function (ev) {
-            ev.halt();
-            colorWin.hide();
-            DialogLoader.useDialog(editor, &#x27;color&#x27;, undefined, self);
-        });
-        self._prepare = self._show;
-        self._show();
-    },
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>config</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
 
-    _show: function () {
-        var self = this,
-            el = self.get(&#x27;el&#x27;),
-            colorWin = self.colorWin;
-        colorWin.set(&#x27;align&#x27;, {
-            node: el,
-            points: [&#x27;bl&#x27;, &#x27;tl&#x27;],
-            offset: [0, 2],
-            overflow: {
-                adjustX: 1,
-                adjustY: 1
-            }
-        });
-        colorWin.show();
-    },
+    
 
-    _selectColor: function (ev) {
-        ev.halt();
-        var self = this,
-            editor = self.get(&#x27;editor&#x27;),
-            prefixCls = editor.get(&#x27;prefixCls&#x27;),
-            t = $(ev.target);
-        if (t.hasClass(prefixCls + &#x27;editor-color-a&#x27;)) {
-            self.fire(&#x27;selectColor&#x27;, {
-                color: t.style(&#x27;background-color&#x27;)
-            });
-        } else if (t.hasClass(prefixCls + &#x27;editor-color-remove&#x27;)) {
-            self.fire(&#x27;selectColor&#x27;, {
-                color: null
-            });
-        }
-    },
+    
 
-    destructor: function () {
-        var self = this;
-        if (self.colorWin) {
-            self.colorWin.destroy();
-        }
-    }
-}, {
-    ATTRS: {
-        checkable: {
-            value: true
-        },
-        mode: {
-            value: Editor.Mode.WYSIWYG_MODE
-        }
-    }
-});
+    
 
-var tpl = &#x27;&lt;div class=&quot;{icon}&quot;&gt;&lt;/div&gt;&#x27; +
-    &#x27;&lt;div style=&quot;background-color:{defaultColor}&quot;&#x27; +
-    &#x27; class=&quot;{indicator}&quot;&gt;&lt;/div&gt;&#x27;;
+    
 
-function runCmd(editor, cmdType, color) {
-    setTimeout(function () {
-        editor.execCommand(cmdType, color);
-    }, 0);
-}
+    
 
-ColorButton.init = function (editor, cfg) {
-    var prefix = editor.get(&#x27;prefixCls&#x27;) + &#x27;editor-toolbar-&#x27;,
-        cmdType = cfg.cmdType,
-        defaultColor = cfg.defaultColor,
-        tooltip = cfg.tooltip;
+    
 
-    var button = editor.addButton(cmdType, {
-        elCls: cmdType + &#x27;Btn&#x27;,
-        content: util.substitute(tpl, {
-            defaultColor: defaultColor,
-            icon: prefix + &#x27;item &#x27; + prefix + cmdType,
-            indicator: prefix + &#x27;color-indicator&#x27;
-        }),
-        mode: Editor.Mode.WYSIWYG_MODE,
-        tooltip: &#x27;设置&#x27; + tooltip
-    });
+    
 
-    var arrow = editor.addButton(cmdType + &#x27;Arrow&#x27;, {
-        tooltip: &#x27;选择并设置&#x27; + tooltip,
-        elCls: cmdType + &#x27;ArrowBtn&#x27;
-    }, ColorButton);
+    <div class="meta">
+        
+            
+                
+                <p>
+            
+        
+        </p>
 
-    var indicator = button.get(&#x27;el&#x27;).one(&#x27;.&#x27; + prefix + &#x27;color-indicator&#x27;);
 
-    arrow.on(&#x27;selectColor&#x27;, function (e) {
-        indicator.css(&#x27;background-color&#x27;, e.color || defaultColor);
-        runCmd(editor, cmdType, e.color);
-    });
+        
 
-    button.on(&#x27;click&#x27;, function () {
-        runCmd(editor, cmdType, indicator.style(&#x27;background-color&#x27;));
-    });
-};
+        
+    </div>
 
-module.exports = ColorButton;
-});
-    </pre>
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">config</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>KISSY.use(&#39;editor,kg/editor-plugins/当前版本号/resize&#39;, function(S, Editor, Resize){
+    var editor = new Editor({
+        render : &#39;#container&#39;,
+        plugins : [
+            new Resize({
+                direction : [&quot;x&quot;]  //表示只能在x轴方向拉伸，[&quot;x&quot;, &quot;y&quot;]则表示任意方向拉伸
+            })
+        ]
+    })
+})</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+    </div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+        
+        
+            <li class="api-class-tab attrs"><a href="#attrs">Attributes</a></li>
+        
+        
+            <li class="api-class-tab events"><a href="#events">Events</a></li>
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+
+            
+
+            
+                <div class="index-section attrs">
+                    <h3>Attributes</h3>
+
+                    <ul class="index-list attrs">
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_direction">direction</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section events">
+                    <h3>Events</h3>
+
+                    <ul class="index-list events">
+                        
+                            <li class="index-item event">
+                                <a href="#event_resize">resize</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_resizeStart">resizeStart</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </div>
+
+        
+
+        
+
+        
+            <div id="attrs" class="api-class-tabpanel">
+                <h2 class="off-left">Attributes</h2>
+
+                
+                    <div id="attr_direction" class="attr item">
+    <a name="config_direction"></a> 
+    <h3 class="name"><code>direction</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String[]</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>右下角调整大小的配置</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="events" class="api-class-tabpanel">
+                <h2 class="off-left">Events</h2>
+
+                
+                    <div id="event_resize" class="events item">
+    <h3 class="name"><code>resize</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>调整过程中周期触发</p>
+
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_resizeStart" class="events item">
+    <h3 class="name"><code>resizeStart</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>调整开始时触发</p>
+
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+            </div>
+        
+    </div>
 </div>
 
                     </div>
