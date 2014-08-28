@@ -53,7 +53,7 @@ KISSY.use('util, node', function (S, util, Node) {
     var fullPlugins = [];
 
     util.each(plugins, function (p, i) {
-        fullPlugins[i] = "editor-plugins/lib/" + p;
+        fullPlugins[i] = "kg/editor-plugins/" + window.EDITOR_VERSION + '/' + p;
     });
 
     var pluginConfig = {
@@ -209,7 +209,7 @@ KISSY.use('util, node', function (S, util, Node) {
             // saveKey:"xxx",
             interval: 5,
             limit: 10,
-            "helpHTML": "<div " +
+            "helpHtml": "<div " +
                 "style='width:200px;'>" +
                 "<div style='padding:5px;'>草稿箱能够自动保存您最新编辑的内容，" +
                 "如果发现内容丢失，" +
