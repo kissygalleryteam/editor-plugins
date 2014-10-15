@@ -1,0 +1,1 @@
+define('kg/editor-plugins/1.1.3/strike-through',["./font/ui","./strike-through/cmd","./button"],function(require, exports, module) {function t(){}var o=require("./font/ui"),r=require("./strike-through/cmd");require("./button"),t.prototype={pluginRenderUI:function(t){r.init(t),t.addButton("strikeThrough",{cmdType:"strikeThrough",tooltip:"删除线"},o.Button)}},module.exports=t;});

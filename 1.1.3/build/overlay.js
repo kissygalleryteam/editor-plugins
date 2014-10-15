@@ -1,0 +1,1 @@
+define('kg/editor-plugins/1.1.3/overlay',["editor","overlay","./focus-fix"],function(require, exports, module) {var e=require("editor"),i=require("overlay"),r=require("./focus-fix");module.exports=i.extend({bindUI:function(){r.init(this)}},{ATTRS:{prefixCls:{value:"ks-editor-"},zIndex:{value:e.baseZIndex(e.ZIndexManager.OVERLAY)}}});});

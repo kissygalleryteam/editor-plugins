@@ -1,0 +1,1 @@
+define('kg/editor-plugins/1.1.3/italic/cmd',["editor","../font/cmd"],function(require, exports, module) {var e=require("editor"),t=require("../font/cmd"),i=new e.Style({element:"em",overrides:[{element:"i"},{element:"span",attributes:{style:"font-style: italic;"}}]});module.exports={init:function(e){t.addButtonCmd(e,"italic",i)}};});

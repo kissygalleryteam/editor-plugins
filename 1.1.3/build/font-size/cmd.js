@@ -1,0 +1,1 @@
+define('kg/editor-plugins/1.1.3/font-size/cmd',["../font/cmd"],function(require, exports, module) {var e=require("../font/cmd"),t={element:"span",styles:{"font-size":"#(value)"},overrides:[{element:"font",attributes:{size:null}}]};module.exports={init:function(n){e.addSelectCmd(n,"fontSize",t)}};});

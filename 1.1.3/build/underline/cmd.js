@@ -1,0 +1,1 @@
+define('kg/editor-plugins/1.1.3/underline/cmd',["editor","../font/cmd"],function(require, exports, module) {var e=require("editor"),t=require("../font/cmd"),n=new e.Style({element:"u",overrides:[{element:"span",attributes:{style:"text-decoration: underline;"}}]});module.exports={init:function(e){t.addButtonCmd(e,"underline",n)}};});
