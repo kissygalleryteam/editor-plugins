@@ -1,4 +1,4 @@
-/** generate by joycss v0.5.12, on time: 2014-11-04 15:28:48 */
+/** generate by joycss v0.5.12, on time: 2014-11-04 14:54:06 */
 .ks-editor-toolbar-sourceArea,
 .ks-editor-toolbar-preview,
 .ks-editor-toolbar-bold,
@@ -112,16 +112,16 @@ ks-editor-toolbar-padding {
   width: 0;
 }
 .ks-editor-toolbar-sourceArea {
-  background-position: -78px -77px;
+  background-position: 0 -355px;
 }
 .ks-editor-toolbar-preview {
-  background-position: -119px -26px;
+  background-position: 0 -69px;
 }
 .ks-editor-toolbar-bold {
-  background-position: -119px 0;
+  background-position: 0 -381px;
 }
 .ks-editor-toolbar-italic {
-  background-position: 0 -25px;
+  background-position: 0 -95px;
 }
 .ks-editor-toolbar-underline {
   height: 11px;
@@ -130,21 +130,21 @@ ks-editor-toolbar-padding {
   width: 10px;
   margin-left: 7px;
   margin-right: 7px;
-  background-position: 0 -129px;
+  background-position: -57px 0;
 }
 .ks-editor-toolbar-strikeThrough {
   height: 11px;
   margin-top: 4px;
   margin-bottom: 5px;
-  background-position: -145px -78px;
+  background-position: 0 -679px;
 }
 .ks-editor-toolbar-orderedList {
   margin-right: 0;
-  background-position: 0 -51px;
+  background-position: 0 -147px;
 }
 .ks-editor-toolbar-unorderedList {
   margin-right: 0;
-  background-position: -26px -51px;
+  background-position: 0 -173px;
 }
 .ks-editor-tools .ks-editor-toolbar-unorderedListArrowBtn,
 .ks-editor-tools .ks-editor-toolbar-orderedListArrowBtn {
@@ -178,22 +178,22 @@ ks-editor-toolbar-padding {
   background: none;
 }
 .ks-editor-toolbar-outdent {
-  background-position: -52px -51px;
+  background-position: 0 -199px;
 }
 .ks-editor-toolbar-indent {
-  background-position: -93px 0;
+  background-position: 0 -225px;
 }
 .ks-editor-toolbar-justifyLeft {
-  background-position: -93px -26px;
+  background-position: 0 -251px;
 }
 .ks-editor-toolbar-justifyCenter {
-  background-position: 0 -77px;
+  background-position: 0 -277px;
 }
 .ks-editor-toolbar-justifyRight {
-  background-position: -26px -77px;
+  background-position: 0 -303px;
 }
 .ks-editor-toolbar-image {
-  background-position: -52px -77px;
+  background-position: 0 -329px;
 }
 .ks-editor-toolbar-backColorBtn,
 .ks-editor-toolbar-foreColorBtn {
@@ -213,7 +213,7 @@ ks-editor-toolbar-padding {
   margin-left: 3px;
 }
 .ks-editor-toolbar-foreColor {
-  background-position: -34px 0;
+  background-position: 0 -45px;
 }
 .ks-editor-toolbar-color-indicator {
   height: 4px;
@@ -238,54 +238,54 @@ ks-editor-toolbar-padding {
   margin: 8px 2px;
 }
 .ks-editor-toolbar-undo {
-  background-position: -93px -52px;
+  background-position: 0 -690px;
 }
 .ks-editor-toolbar-redo {
   height: 15px;
   margin: 3px 4px;
-  background-position: -67px -26px;
+  background-position: 0 -715px;
 }
 .ks-editor-toolbar-table {
-  background-position: -119px -52px;
+  background-position: 0 -407px;
 }
 .ks-editor-toolbar-template {
-  background-position: 0 -103px;
+  background-position: 0 -433px;
 }
 .ks-editor-toolbar-maximize {
-  background-position: -26px -103px;
+  background-position: 0 -459px;
 }
 .ks-editor-toolbar-flash {
-  background-position: -52px -103px;
+  background-position: 0 -485px;
 }
 .ks-editor-toolbar-link {
-  background-position: -78px -103px;
+  background-position: 0 -511px;
 }
 .ks-editor-toolbar-music {
-  background-position: -104px -103px;
+  background-position: 0 -537px;
 }
 .ks-editor-toolbar-xiamiMusic {
-  background-position: -104px -103px;
+  background-position: 0 -537px;
 }
 .ks-editor-toolbar-video {
-  background-position: -145px 0;
+  background-position: 0 -563px;
 }
 .ks-editor-toolbar-smiley {
-  background-position: -145px -26px;
+  background-position: 0 -589px;
 }
 .ks-editor-toolbar-removeFormat {
-  background-position: -67px 0;
+  background-position: 0 -615px;
 }
 .ks-editor-toolbar-pageBreak {
   height: 12px;
   margin-top: 4px;
   margin-bottom: 4px;
-  background-position: -145px -99px;
+  background-position: 0 -667px;
 }
 .ks-editor-toolbar-code {
-  background-position: -26px -25px;
+  background-position: 0 -121px;
 }
 .ks-editor-toolbar-restore {
-  background-position: -145px -52px;
+  background-position: 0 -641px;
 }
 .ks-editor-input {
   border-radius: 2px;
@@ -539,7 +539,7 @@ ks-editor-toolbar-padding {
   box-shadow: 0 1px 1px #E4E4E4;
   background-color: #e8ebee;
   background-repeat: repeat-x;
-  background-position: 0 -160px;
+  background-position: 0 -730px;
 }
 .ks-ie6 .ks-editor-button,
 .ks-ie7 .ks-editor-button {
@@ -570,7 +570,7 @@ ks-editor-toolbar-padding {
   border-color: #e8cca0;
   background-color: #f5e7ce;
   background-repeat: repeat-x;
-  background-position: 0 -196px;
+  background-position: 0 -766px;
 }
 .ks-editor-tools .ks-editor-button-hover,
 .ks-editor-tools .ks-editor-button:hover {
@@ -788,7 +788,7 @@ a.ks-editor-color-remove:hover {
   padding: 0 0 0 18px;
   background-color: #d6dbe2;
   background-repeat: repeat-x;
-  background-position: 0 -232px;
+  background-position: 0 -802px;
 }
 .ks-editor-dialog-close {
   height: 18px;
@@ -811,7 +811,7 @@ a.ks-editor-color-remove:hover {
   text-indent: -9999px;
   width: 13px;
   margin: 2.5px;
-  background-position: -119px -78px;
+  background-position: -34px 0;
 }
 .ks-editor-dialog-close:hover {
   border: 1px solid #CED5E0;
@@ -867,7 +867,7 @@ a.ks-editor-color-remove:hover {
   bottom: 0px;
   right: 0px;
   cursor: auto;
-  background-position: right -150px;
+  background-position: 0 -25px;
 }
 .ks-editor-menu-button,
 .ks-editor-big-select {
@@ -910,7 +910,7 @@ a.ks-editor-color-remove:hover {
   margin-top: 10px;
   margin-right: 5px;
   background-color: transparent;
-  background-position: -19px -129px;
+  background-position: -57px -21px;
 }
 .ks-editor-big-menu-button-dropdown {
   margin-top: 0;
@@ -944,7 +944,7 @@ a.ks-editor-color-remove:hover {
   padding-top: 1px;
   border-left: 1px solid #C1C8D1;
   background-repeat: repeat-x;
-  background-position: 0 -160px;
+  background-position: 0 -730px;
 }
 .ks-editor-big-select {
   background: url("http://gtms04.alicdn.com/tps/i4/TB1ELQgFVXXXXbjXXXXEpzW.VXX-1-18.png") #ffffff repeat-x scroll 0 0;

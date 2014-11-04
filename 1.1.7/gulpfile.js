@@ -39,7 +39,6 @@ gulp.task('kmc', function(cb){
 gulp.task('buildCss', function(cb){
     gulp.src('assets/*.less')
         .pipe(gulpJoycss({
-            layout:'close',
             'editor.less' : {
                 imgPath : 'build/assets',
                 dest : 'build/assets/editor.css',
