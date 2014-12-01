@@ -1,1 +1,0 @@
-define("kg/editor-plugins/1.1.4/code",["editor","./button","./dialog-loader"],function(o,e,t){function d(){}var i=o("editor");o("./button");var n=o("./dialog-loader");d.prototype={pluginRenderUI:function(o){o.addButton("code",{tooltip:"插入代码",listeners:{click:function(){n.useDialog(o,"code")}},mode:i.Mode.WYSIWYG_MODE})}},t.exports=d});
